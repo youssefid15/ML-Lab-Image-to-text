@@ -7,11 +7,8 @@ import torch
 import torchvision.transforms as transforms
 import pickle
 
-#from model import ImageCaptioningModel, EncoderCNN, DecoderRNN, Vocabulary, FlickrDataset
-from model import MyCaptioningModel
-model = MyCaptioningModel(...)
-model.load_state_dict(torch.load('model.pth', map_location='cpu'))
-model.eval()
+from model import ImageCaptioningModel, EncoderCNN, DecoderRNN, Vocabulary, FlickrDataset
+
 
 import os
 import requests
