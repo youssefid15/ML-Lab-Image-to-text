@@ -7,7 +7,11 @@ import torch
 import torchvision.transforms as transforms
 import pickle
 
-from model import ImageCaptioningModel, EncoderCNN, DecoderRNN, Vocabulary, FlickrDataset
+#from model import ImageCaptioningModel, EncoderCNN, DecoderRNN, Vocabulary, FlickrDataset
+from model import MyCaptioningModel
+model = MyCaptioningModel(...)
+model.load_state_dict(torch.load('model.pth', map_location='cpu'))
+model.eval()
 
 import os
 import requests
@@ -140,7 +144,10 @@ if uploaded_image:
         vocab_size=len(vocab)
     ).to(device)
 
-    model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+    model = MyCaptioningModel(...)
+    model.load_state_dict(torch.load('model.pth', map_location='cpu'))
+
+    #model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
 
     # Préparer l'image pour le modèle
     image_tensor = transform(image).unsqueeze(0).to(device)
