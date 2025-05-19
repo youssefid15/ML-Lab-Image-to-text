@@ -162,7 +162,7 @@ if uploaded_image:
 
     st.write("⏳ Génération de la légende...")
     caption = generate_caption(model, image_tensor, vocab, device)
-    st.success(f"📜 Légende générée : **{caption}**")"""
+    st.success(f"📜 Légende générée : **{caption}**")
 
 import streamlit as st
 from PIL import Image
