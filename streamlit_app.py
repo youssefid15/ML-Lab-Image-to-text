@@ -10,7 +10,8 @@ import pickle
 from model import ImageCaptioningModel, EncoderCNN, DecoderRNN, Vocabulary, FlickrDataset
 
 # CONFIG
-MODEL_PATH = "C:/Users/Idris/OneDrive/Desktop/ML PROJECT 3/model.pth"
+#MODEL_PATH = "C:/Users/Idris/OneDrive/Desktop/ML PROJECT 3/model.pth"
+MODEL_PATH = "model.pth"
 IMAGE_DIR = "C:/Users/Idris/OneDrive/Desktop/ML PROJECT 3/Flickr8k_Dataset/Images"
 CAPTIONS_FILE = "C:/Users/Idris/OneDrive/Desktop/ML PROJECT 3/Flickr8k_Dataset/captions.txt"
 VOCAB_PATH = "vocab.pkl"
