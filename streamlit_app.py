@@ -9,6 +9,23 @@ import pickle
 
 from model import ImageCaptioningModel, EncoderCNN, DecoderRNN, Vocabulary, FlickrDataset
 
+import os
+import requests
+
+MODEL_URL = 'https://drive.google.com/file/d/1PBA8_U_vMymKMqCBgDAfTKme7WDJRVjs/view?usp=drive_link'
+MODEL_PATH = 'model.pth'
+
+def download_model():
+    if not os.path.exists(MODEL_PATH):
+        print("Downloading model...")
+        response = requests.get(MODEL_URL)
+        with open(MODEL_PATH, 'wb') as f:
+            f.write(response.content)
+        print("Model downloaded successfully.")
+
+# Call the function at the start of your app
+download_model()
+
 # CONFIG
 #MODEL_PATH = "C:/Users/Idris/OneDrive/Desktop/ML PROJECT 3/model.pth"
 MODEL_PATH = "model.pth"
