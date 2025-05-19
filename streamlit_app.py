@@ -13,7 +13,8 @@ from model import ImageCaptioningModel, EncoderCNN, DecoderRNN, Vocabulary, Flic
 MODEL_PATH = "C:/Users/Idris/OneDrive/Desktop/ML PROJECT 3/model.pth"
 IMAGE_DIR = "C:/Users/Idris/OneDrive/Desktop/ML PROJECT 3/Flickr8k_Dataset/Images"
 CAPTIONS_FILE = "C:/Users/Idris/OneDrive/Desktop/ML PROJECT 3/Flickr8k_Dataset/captions.txt"
-VOCAB_PATH = "C:/Users/Idris/OneDrive/Desktop/ML PROJECT 3/vocab.pkl"
+VOCAB_PATH = "vocab.pkl"
+#VOCAB_PATH = "C:/Users/Idris/OneDrive/Desktop/ML PROJECT 3/vocab.pkl"
 #MODEL_PATH = os.path.join(BASE_DIR, "model.pth")
 
 with open(VOCAB_PATH, 'rb') as f:
