@@ -7,9 +7,9 @@ import torch
 import torchvision.transforms as transforms
 import pickle
 
-#from model import ImageCaptioningModel, EncoderCNN, DecoderRNN, Vocabulary, FlickrDataset
-from model import ImageCaptioningModel
-import torch
+
+from model import ImageCaptioningModel, EncoderCNN, DecoderRNN, Vocabulary, FlickrDataset
+
 
 # Set these values to what you used for training!
 embed_size = 256
