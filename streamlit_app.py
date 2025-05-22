@@ -140,32 +140,33 @@ st.title("🖼️ Générateur de Légendes d'Images")
 uploaded_image = st.file_uploader("Choisissez une image", type=["jpg", "jpeg", "png"])
 
 if uploaded_image:
-    image = Image.open(uploaded_image).convert("RGB")
-    st.image(image, caption="Image sélectionnée", use_container_width=True)
-
-    st.write("⏳ Chargement du vocabulaire et du modèle...")
+    try:
+        image = Image.open(uploaded_image).convert("RGB")
+        st.image(image, caption="Image sélectionnée", use_container_width=True)
     
+        st.write("⏳ Chargement du vocabulaire et du modèle...")
+        
+        
+        
+        vocab = load_vocab()
     
+        model = ImageCaptioningModel(
+            embed_size=256,
+            hidden_size=512,
+            vocab_size=len(vocab)
+        ).to(device)
     
-    vocab = load_vocab()
-
-    model = ImageCaptioningModel(
-        embed_size=256,
-        hidden_size=512,
-        vocab_size=len(vocab)
-    ).to(device)
-
-    model = MyCaptioningModel(...)
-    model.load_state_dict(torch.load('model.pth', map_location='cpu'))
-
-    #model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
-
-    # Préparer l'image pour le modèle
-    image_tensor = transform(image).unsqueeze(0).to(device)
-
-    st.write("⏳ Génération de la légende...")
-    caption = generate_caption(model, image_tensor, vocab, device)
-    st.success(f"📜 Légende générée : **{caption}**")
+        model = MyCaptioningModel(...)
+        model.load_state_dict(torch.load('model.pth', map_location='cpu'))
+    
+        #model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+    
+        # Préparer l'image pour le modèle
+        image_tensor = transform(image).unsqueeze(0).to(device)
+    
+        st.write("⏳ Génération de la légende...")
+        caption = generate_caption(model, image_tensor, vocab, device)
+        st.success(f"📜 Légende générée : **{caption}**")
 
     except Exception as e:
         st.error(f"Erreur lors du traitement de l’image : {e}")
