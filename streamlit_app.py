@@ -145,8 +145,7 @@ if uploaded_image:
 
     st.write("⏳ Chargement du vocabulaire et du modèle...")
     
-    except Exception as e:
-    st.error(f"Erreur lors du traitement de l’image : {e}")
+    
     
     vocab = load_vocab()
 
@@ -168,5 +167,7 @@ if uploaded_image:
     caption = generate_caption(model, image_tensor, vocab, device)
     st.success(f"📜 Légende générée : **{caption}**")
 
+    except Exception as e:
+        st.error(f"Erreur lors du traitement de l’image : {e}")
 
    
