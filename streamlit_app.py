@@ -18,7 +18,7 @@ hidden_size = 512
 vocab_size = 2997
 
 #model = ImageCaptioningModel(embed_size, hidden_size, vocab_size)
-model.load_state_dict(torch.load('model.pth', map_location='cpu'))
+
 model.eval()
 
 
@@ -158,7 +158,7 @@ if uploaded_image:
     
         model = MyCaptioningModel(...)
         model.load_state_dict(torch.load('model.pth', map_location='cpu'))
-    
+        model.eval()
         #model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
     
         # Préparer l'image pour le modèle
