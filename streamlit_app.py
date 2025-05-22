@@ -17,7 +17,7 @@ embed_size = 256
 hidden_size = 512
 vocab_size = 2997
 
-model = ImageCaptioningModel(embed_size, hidden_size, vocab_size)
+#model = ImageCaptioningModel(embed_size, hidden_size, vocab_size)
 model.load_state_dict(torch.load('model.pth', map_location='cpu'))
 model.eval()
 
