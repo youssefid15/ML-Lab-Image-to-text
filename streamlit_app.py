@@ -157,9 +157,10 @@ if uploaded_image:
         ).to(device)
     
         model = MyCaptioningModel(...)
-        model.load_state_dict(torch.load('model.pth', map_location='cpu'))
+        #model.load_state_dict(torch.load('model.pth', map_location='cpu'))
+        model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
         model.eval()
-        #model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+        
     
         # Préparer l'image pour le modèle
         image_tensor = transform(image).unsqueeze(0).to(device)
