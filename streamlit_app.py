@@ -22,7 +22,7 @@ def download_model():
 download_model()
 
 # ==== Load Vocabulary ====
-@st.cache_data
+
 def load_vocab():
     with open(VOCAB_PATH, 'rb') as f:
         vocab = pickle.load(f)
