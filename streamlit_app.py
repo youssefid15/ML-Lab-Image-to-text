@@ -157,8 +157,8 @@ if uploaded_image:
         ).to(device)
     
         model = MyCaptioningModel(...)
-        #model.load_state_dict(torch.load('model.pth', map_location='cpu'))
-        model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+        model.load_state_dict(torch.load('model.pth', map_location='cpu'))
+        #model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
         model.eval()
         
     
