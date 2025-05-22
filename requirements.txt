@@ -6,4 +6,4 @@ numpy
 requests
 scikit-learn
 matplotlib
-tqdm
+
