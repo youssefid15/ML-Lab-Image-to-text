@@ -6,7 +6,8 @@ from PIL import Image
 import torch
 import torchvision.transforms as transforms
 import pickle
-
+import io
+import traceback
 
 from model import ImageCaptioningModel, EncoderCNN, DecoderRNN, Vocabulary, FlickrDataset
 
@@ -143,7 +144,10 @@ if uploaded_image:
     st.image(image, caption="Image sélectionnée", use_container_width=True)
 
     st.write("⏳ Chargement du vocabulaire et du modèle...")
-
+    
+    except Exception as e:
+    st.error(f"Erreur lors du traitement de l’image : {e}")
+    
     vocab = load_vocab()
 
     model = ImageCaptioningModel(
