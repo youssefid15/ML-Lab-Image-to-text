@@ -77,7 +77,8 @@ uploaded_image = st.file_uploader("Choisissez une image", type=["jpg", "jpeg", "
 if uploaded_image:
     try:
         image = Image.open(uploaded_image).convert("RGB")
-        st.image(image, caption="Image sélectionnée", use_column_width=True)
+        st.image(image, caption="Image sélectionnée", use_container_width=True)
+
         st.write("⏳ Chargement du modèle...")
 
         # Instantiate and load the model
