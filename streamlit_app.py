@@ -19,7 +19,7 @@ vocab_size = 2997
 
 #model = ImageCaptioningModel(embed_size, hidden_size, vocab_size)
 
-model.eval()
+
 
 
 import os
